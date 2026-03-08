@@ -1,0 +1,137 @@
+.contact {
+  padding: 8rem 3rem 4rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--acid);
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.contact-label span {
+  color: var(--white);
+  opacity: 0.3;
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  flex: 1;
+  align-items: center;
+}
+
+.contact-heading {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.italic-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--acid);
+}
+
+.contact-sub {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: var(--white);
+  opacity: 0.4;
+}
+
+/* Email CTA */
+.contact-email {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-email:hover {
+  color: var(--acid);
+  border-color: var(--acid);
+}
+
+.email-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+}
+
+.contact-email:hover .email-arrow {
+  transform: translate(3px, -3px);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  opacity: 0.4;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: opacity 0.2s, padding-left 0.2s;
+}
+
+.contact-link:hover {
+  opacity: 1;
+  padding-left: 0.5rem;
+}
+
+.link-arrow {
+  transition: transform 0.2s;
+}
+
+.contact-link:hover .link-arrow {
+  transform: translateX(5px);
+}
+
+/* Footer */
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4rem;
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  opacity: 0.25;
+}
+
+@media (max-width: 768px) {
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

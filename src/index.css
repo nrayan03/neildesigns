@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  --black: #0a0a0a;
+  --white: #f0ece3;
+  --acid: #c8f000;
+  --red: #ff2d2d;
+  --muted: #2a2a2a;
+  --border: #333;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-serif: 'Instrument Serif', serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  cursor: none;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--acid);
+  color: var(--black);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.app.loaded {
+  opacity: 1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--acid);
+}
