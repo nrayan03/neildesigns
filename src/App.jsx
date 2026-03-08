@@ -1,28 +1,18 @@
-import { useState, useEffect } from 'react'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Cursor from './components/Cursor'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
+import About from './pages/About'
+import Projects from './pages/Projects'
+import Spotify from './pages/Spotify'
 
 export default function App() {
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(() => {
-    setTimeout(() => setLoaded(true), 100)
-  }, [])
-
   return (
-    <div className={`app ${loaded ? 'loaded' : ''}`}>
-      <Cursor />
+    <BrowserRouter>
       <Nav />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-    </div>
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/spotify" element={<Spotify />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

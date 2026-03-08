@@ -1,0 +1,138 @@
+.about-page {
+  min-height: 100vh;
+  padding-top: 8rem;
+}
+
+/* Hero */
+.about-hero {
+  padding: 4rem 3rem 5rem;
+  max-width: 900px;
+}
+
+.about-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.about-headline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+.about-tagline {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 480px;
+}
+
+.about-tagline .italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--white);
+  opacity: 0.7;
+}
+
+/* Divider */
+.about-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 3rem;
+  transform-origin: left;
+}
+
+/* Disciplines */
+.about-disciplines {
+  padding: 5rem 3rem 4rem;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 3rem;
+}
+
+.disciplines-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.discipline-row {
+  display: grid;
+  grid-template-columns: 50px 260px 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.3s ease;
+}
+
+.discipline-row:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.discipline-row:hover {
+  padding-left: 1rem;
+}
+
+.discipline-index {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  padding-top: 0.4rem;
+}
+
+.discipline-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.discipline-desc {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 420px;
+  padding-top: 0.5rem;
+}
+
+/* Footer */
+.about-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .discipline-row {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .discipline-desc {
+    grid-column: 2;
+    padding-top: 0.5rem;
+  }
+}
