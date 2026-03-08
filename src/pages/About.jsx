@@ -73,8 +73,7 @@ export default function About() {
         >
           I never picked a lane. Product design, digital art, fabrication, web — I've always
           moved across mediums because the idea should dictate the tool, not the other way around.
-          The internet let me learn everything, so I learned everything. From concept to fabrication
-          to marketing to shipping, I want to own the whole chain.
+          From concept to fabrication to marketing to shipping, I want to own the whole chain.
           <br />
           <span className="italic"> This page grows with me.</span>
         </motion.p>
