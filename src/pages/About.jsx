@@ -6,27 +6,27 @@ const disciplines = [
   {
     index: '01',
     title: 'Graphic Design\n& Digital Art',
-    desc: 'Visual identity, digital illustration, and art direction. Designing things that have a point of view.',
+    desc: 'Album artwork, photo editing, and digital illustration across a range of styles and aesthetics. Built to fit the vision, not a template',
   },
   {
     index: '02',
     title: 'Painting',
-    desc: 'Traditional and mixed media. The physical counterpart to the digital work.',
+    desc: 'Traditional and mixed media. The physical counterpart to the digital work',
   },
   {
     index: '03',
     title: '3D Printing\n& CAD',
-    desc: 'Prototyping and fabrication on a Bambu Lab A1. Bridging digital design with physical objects.',
+    desc: 'Prototyping and fabrication. Bridging digital design with physical objects',
   },
   {
     index: '04',
     title: 'Coding &\nWeb Design',
-    desc: 'Full-stack development, DevOps infrastructure, and building experiences for the web.',
+    desc: 'Full-stack development, infrastructure, site maintenence, and building experiences for the web',
   },
   {
     index: '05',
     title: 'And\nMore.',
-    desc: 'Always exploring. Always building. The list keeps growing.',
+    desc: 'Always exploring. Always building. My skills keeps growing',
   },
 ]
 
@@ -71,8 +71,11 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          I make things — digitally, physically,<br />
-          <span className="italic">and everything in between.</span>
+          I never picked a lane. Product design, digital art, fabrication, web — I've always
+          moved across mediums because the idea should dictate the tool, not the other way around.
+          The internet let me learn everything, so I learned everything. From concept to fabrication
+          to marketing to shipping, I want to own the whole chain.
+          <span className="italic"> This page grows with me.</span>
         </motion.p>
       </section>
 
