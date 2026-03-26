@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap');
 
 :root {
   --black: #000000;
@@ -6,10 +6,11 @@
   --acid: #FFD700;
   --dim: #111111;
   --border: #1a1a1a;
-  --muted: #555555;
-  --font-display: 'Bebas Neue', sans-serif;
+  --muted: #707070;
+  --font-display: 'Cormorant', serif;
+  --font-display-caps: 'Bebas Neue', sans-serif;
   --font-mono: 'Space Mono', monospace;
-  --font-serif: 'Instrument Serif', serif;
+  --font-serif: 'Cormorant Garamond', serif;
 }
 
 *, *::before, *::after {

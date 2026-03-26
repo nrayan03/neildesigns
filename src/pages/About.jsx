@@ -1,52 +1,56 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import './About.css'
 
-const disciplines = [
+const socials = [
   {
-    index: '01',
-    title: 'Graphic Design\n& Digital Art',
-    desc: 'Album artwork, photo editing, and digital illustration across a range of styles and aesthetics. Built to fit the vision, not a template',
+    label: 'neil.rayan03@gmail.com',
+    href: null,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="M2 7l10 7 10-7"/>
+      </svg>
+    ),
   },
   {
-    index: '02',
-    title: 'Painting',
-    desc: 'Traditional and mixed media. The physical counterpart to the digital work',
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/neilrayan/',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="4"/>
+        <path d="M7 10v7M7 7v.01M12 10v7M12 13a3 3 0 016 0v4"/>
+      </svg>
+    ),
   },
   {
-    index: '03',
-    title: '3D Printing\n& CAD',
-    desc: 'Prototyping and fabrication. Bridging digital design with physical objects',
+    label: '@paintbyneil',
+    href: 'https://instagram.com/paintbyneil',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+      </svg>
+    ),
   },
   {
-    index: '04',
-    title: 'Coding &\nWeb Design',
-    desc: 'Full-stack development, infrastructure, site maintenence, and building experiences for the web',
-  },
-  {
-    index: '05',
-    title: 'And\nMore.',
-    desc: 'Always exploring. Always building. My skills keeps growing',
+    label: '@rayan.neil',
+    href: 'https://instagram.com/rayan.neil',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+      </svg>
+    ),
   },
 ]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] },
-  }),
-}
-
 export default function About() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-
   return (
     <div className="about-page">
-      {/* Hero intro */}
       <section className="about-hero">
+
         <motion.p
           className="about-eyebrow"
           initial={{ opacity: 0 }}
@@ -65,64 +69,45 @@ export default function About() {
           Neil Rayan
         </motion.h1>
 
+        <motion.div
+          className="about-socials"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {socials.map((s) => {
+            const Tag = s.href ? 'a' : 'span'
+            const linkProps = s.href ? { href: s.href, target: '_blank', rel: 'noopener noreferrer' } : {}
+            return (
+              <Tag
+                key={s.label}
+                {...linkProps}
+                className={`social-icon${s.href ? '' : ' no-link'}`}
+                aria-label={s.label}
+                title={s.label}
+              >
+                {s.icon}
+                <span className="social-label">{s.label}</span>
+              </Tag>
+            )
+          })}
+        </motion.div>
+
         <motion.p
-          className="about-tagline"
+          className="about-bio"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          I never picked a lane. Product design, digital art, fabrication, web — I've always
-          moved across mediums because the idea should dictate the tool, not the other way around.
-          From concept to fabrication to marketing to shipping, I want to own the whole chain.
-          <br />
-          <span className="italic"> This page grows with me.</span>
-        </motion.p>
-      </section>
-
-      {/* Divider */}
-      <motion.div
-        className="about-divider"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      />
-
-      {/* Disciplines */}
-      <section className="about-disciplines" ref={ref}>
-        <motion.p
-          className="section-label"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5 }}
-        >
-          What I do
+          I'm Neil. I hold a Computer Science degree from the University of Illinois at Chicago.
+          I'm a DevOps engineer — Terraform, AWS, GCP, Python, scripting. Outside of that: CAD,
+          3D printing, painting (six years), and digital art (four years). I have some creative
+          goals I'm working toward and I'll be documenting the progress here.
         </motion.p>
 
-        <div className="disciplines-list">
-          {disciplines.map((d, i) => (
-            <motion.div
-              key={i}
-              className="discipline-row"
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              animate={inView ? 'show' : 'hidden'}
-            >
-              <span className="discipline-index">{d.index}</span>
-              <h2 className="discipline-title">
-                {d.title.split('\n').map((line, j) => (
-                  <span key={j}>{line}<br /></span>
-                ))}
-              </h2>
-              <p className="discipline-desc">{d.desc}</p>
-            </motion.div>
-          ))}
-        </div>
       </section>
 
-      {/* Footer line */}
       <footer className="about-footer">
-        <span>neildesigns.xyz</span>
         <span>© 2026</span>
       </footer>
     </div>

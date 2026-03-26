@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react'
 import './Nav.css'
 
 const links = [
-  { to: '/', label: 'About' },
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
   { to: '/projects', label: 'Projects' },
-  { to: '/spotify', label: 'Spotify' },
+  { to: '/spotify', label: 'Spotify App' },
 ]
 
 export default function Nav() {
@@ -21,7 +22,7 @@ export default function Nav() {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <NavLink to="/" className="nav-logo">
-        N Rayan<span className="dot">.</span>
+        N/A Studio
       </NavLink>
       <ul className="nav-links">
         {links.map(({ to, label }) => (

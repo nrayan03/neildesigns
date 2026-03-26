@@ -2,70 +2,116 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import './About.css'
 
-const skills = [
-  { cat: 'Cloud', items: ['AWS', 'GCP', 'Kubernetes', 'Terraform'] },
-  { cat: 'Code', items: ['React', 'Python', 'PowerShell', 'Bash'] },
-  { cat: 'Tools', items: ['TeamCity', 'Octopus Deploy', 'Grafana', 'Vault'] },
-  { cat: 'Also', items: ['3D Printing', 'UI Design', 'Cooking', 'Basketball'] },
+const disciplines = [
+  {
+    index: '01',
+    title: 'Graphic Design\n& Digital Art',
+    desc: 'Album artwork, photo editing, and digital illustration across a range of styles and aesthetics. Built to fit the vision, not a template',
+  },
+  {
+    index: '02',
+    title: 'Painting',
+    desc: 'Traditional and mixed media. The physical counterpart to the digital work',
+  },
+  {
+    index: '03',
+    title: '3D Printing\n& CAD',
+    desc: 'Prototyping and fabrication. Bridging digital design with physical objects',
+  },
+  {
+    index: '04',
+    title: 'Coding &\nWeb Design',
+    desc: 'Full-stack development, infrastructure, site maintenence, and building experiences for the web',
+  },
+  {
+    index: '05',
+    title: 'And\nMore.',
+    desc: 'Always exploring. Always building. My skills keeps growing',
+  },
 ]
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] },
+  }),
+}
 
 export default function About() {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
+  const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="about" className="about" ref={ref}>
+    <div className="about-page">
+      {/* Hero intro */}
+      <section className="about-hero">
+        <motion.p
+          className="about-eyebrow"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Chicago, IL
+        </motion.p>
+
+        <motion.h1
+          className="about-headline"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        >
+          Neil Rayan
+        </motion.h1>
+      </section>
+
+      {/* Divider */}
       <motion.div
-        className="about-label"
-        initial={{ opacity: 0, x: -30 }}
-        animate={inView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.5 }}
-      >
-        <span>01</span> About
-      </motion.div>
+        className="about-divider"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      />
 
-      <div className="about-grid">
-        <motion.div
-          className="about-text"
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.1 }}
+      {/* Disciplines */}
+      <section className="about-disciplines" ref={ref}>
+        <motion.p
+          className="section-label"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5 }}
         >
-          <h2 className="about-heading">
-            I build infrastructure<br />
-            <span className="italic-serif">and</span> interfaces.
-          </h2>
-          <p className="about-body">
-            DevOps engineer at Crate & Barrel by day — building multi-cloud
-            infrastructure across AWS and GCP. By night, I design things that
-            live on the web. CS grad from UIC. Based in Chicago.
-          </p>
-          <p className="about-body">
-            This site is my sandbox. Expect experiments.
-          </p>
-        </motion.div>
+          What I do
+        </motion.p>
 
-        <motion.div
-          className="about-skills"
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.25 }}
-        >
-          {skills.map((group, i) => (
-            <div key={i} className="skill-group">
-              <span className="skill-cat">{group.cat}</span>
-              <div className="skill-items">
-                {group.items.map((item, j) => (
-                  <span key={j} className="skill-tag">{item}</span>
+        <div className="disciplines-list">
+          {disciplines.map((d, i) => (
+            <motion.div
+              key={i}
+              className="discipline-row"
+              custom={i}
+              variants={fadeUp}
+              initial="hidden"
+              animate={inView ? 'show' : 'hidden'}
+            >
+              <span className="discipline-index">{d.index}</span>
+              <h2 className="discipline-title">
+                {d.title.split('\n').map((line, j) => (
+                  <span key={j}>{line}<br /></span>
                 ))}
-              </div>
-            </div>
+              </h2>
+              <p className="discipline-desc">{d.desc}</p>
+            </motion.div>
           ))}
-        </motion.div>
-      </div>
+        </div>
+      </section>
 
-      {/* Decorative number */}
-      <div className="about-bg-num">ABOUT</div>
-    </section>
+      {/* Footer line */}
+      <footer className="about-footer">
+        <span>neildesigns.xyz</span>
+        <span>© 2026</span>
+      </footer>
+    </div>
   )
 }
