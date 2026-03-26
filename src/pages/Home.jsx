@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
+import blankfacekingImg from '../assets/blankfaceking.png'
 import './Home.css'
 
 const entries = [
@@ -19,7 +20,7 @@ const entries = [
     title: 'BLANKFACEKING — EP Cover',
     tags: ['Album Art', 'Photoshop', 'Design'],
     body: 'Designed the cover for BLANKFACEVILLAIN & G. King\'s collab EP \'BLANKFACEKING.\'',
-    image: '/src/assets/blankfaceking.png',
+    image: blankfacekingImg,
     link: { label: 'Listen on Spotify ↗', url: 'https://open.spotify.com/album/4fc9fascer8RyMsZBt8uXe' },
   },
   {
