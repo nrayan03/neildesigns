@@ -783,3 +783,127 @@
 .entry-card-image:hover {
   filter: saturate(1.1) contrast(1.05);
 }
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE — max-width: 768px
+   
+   How this works: the browser always loads
+   all of these styles, but only APPLIES the
+   rules inside @media blocks when the screen
+   width matches the condition.
+═══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── Hero ── */
+  .home-page {
+    padding-top: 4.5rem;
+  }
+
+  .home-hero {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* Name scales down — clamp handles this but
+     we also tighten line-height on small screens */
+  .hero-name {
+    font-size: clamp(3.5rem, 14vw, 6rem);
+    line-height: 0.95;
+  }
+
+  .hero-sub {
+    font-size: 0.82rem;
+  }
+
+  .hero-chips {
+    gap: 0.4rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-chip {
+    font-size: 0.55rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* ── Sections ── */
+  .pinned-section,
+  .timeline-section {
+    padding: 3.5rem 1.5rem 4rem;
+  }
+
+  .section-heading {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+
+  /* ── Cards ── */
+  .pinned-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .project-card {
+    padding: 1.5rem 1.5rem 3rem;
+  }
+
+  .card-body-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  /* ── Entries grid ── */
+  .entries-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .entry-card {
+    padding: 1.4rem 1.4rem 2.8rem;
+  }
+
+  .entry-card-title {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+  }
+
+  /* ── Timeline ── */
+  .timeline-line {
+    left: 64px;
+  }
+
+  .timeline-entry {
+    grid-template-columns: 64px 1fr;
+    gap: 0.8rem;
+  }
+
+  .entry-dot {
+    right: -13.5px;
+  }
+
+  .entry-right {
+    padding: 1.2rem 1.2rem 2.8rem;
+  }
+
+  /* ── Footer ── */
+  .home-footer {
+    padding: 1.5rem;
+  }
+}
+
+/* ── Extra small screens (iPhone SE etc) ── */
+@media (max-width: 390px) {
+  .hero-name {
+    font-size: clamp(3rem, 16vw, 4rem);
+  }
+
+  .home-hero {
+    padding: 2.5rem 1.2rem 3rem;
+  }
+
+  .pinned-section,
+  .timeline-section {
+    padding: 3rem 1.2rem 3.5rem;
+  }
+}
