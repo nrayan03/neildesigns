@@ -472,28 +472,24 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.04);
-  color: rgba(240, 236, 227, 0.5);
-  font-size: 1.2rem;
-  line-height: 1;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s;
+  padding: 0;
 }
 
 .card-toggle:hover,
 .entry-toggle:hover {
   border-color: rgba(255,255,255,0.3);
-  color: var(--white);
 }
 
 .is-open .card-toggle,
 .is-open .entry-toggle {
   border-color: rgba(255,255,255,0.25);
-  color: var(--white);
 }
 
 /* ─────────────────────────────────────────────

@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import blankfacekingImg from '../assets/blankfaceking.png'
+import { LogoStar } from '../components/LogoStar'
 import './Home.css'
 
 const entries = [
@@ -97,7 +98,7 @@ function EntryCard({ entry, index, inView }) {
       </AnimatePresence>
 
       <button className="card-toggle" aria-label={open ? 'Collapse' : 'Expand'}>
-        <motion.span animate={{ rotate: open ? 45 : 0 }} transition={{ duration: 0.22 }}>+</motion.span>
+        <LogoStar size={14} color="#f0ece3" />
       </button>
     </motion.div>
   )

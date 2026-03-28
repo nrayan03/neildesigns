@@ -1,0 +1,14 @@
+/* Slow continuous spin — one full rotation every 12 seconds */
+@keyframes star-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.logo-star {
+  display: block;
+}
+
+.logo-star--spin {
+  animation: star-spin 12s linear infinite;
+  transform-origin: center;
+}

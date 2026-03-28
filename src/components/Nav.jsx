@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { LogoStar } from './LogoStar'
 import './Nav.css'
 
 const links = [
@@ -26,6 +27,7 @@ export default function Nav() {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
       <NavLink to="/" className="nav-logo">
+        <LogoStar size={22} color="#f0ece3" animate={true} />
         N/A Studio
       </NavLink>
 
